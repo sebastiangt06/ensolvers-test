@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/notes");
+        const response = await fetch("https://ensolverstestapi.onrender.com/api/notes");
 
         const notes: Note[] = await response.json();
 
@@ -40,7 +40,7 @@ const App = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/notes", {
+      const response = await fetch("https://ensolverstestapi.onrender.com/api/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notes/${selectedNote.id}`,
+        `https://ensolverstestapi.onrender.com/api/notes/${selectedNote.id}`,
         {
           method: "PUT",
           headers: {
@@ -103,7 +103,7 @@ const App = () => {
     event.stopPropagation();
 
     try {
-      await fetch(`http://localhost:5000/api/notes/${noteId}`, {
+      await fetch(`https://ensolverstestapi.onrender.com/api/notes/${noteId}`, {
         method: "DELETE",
       });
 
